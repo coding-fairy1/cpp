@@ -1,0 +1,47 @@
+/*
+	NAME: SCOVIAN ANN
+	REG NO.: BSE-05-0189/2024
+	DESCRIPTION: PROGRAM TO CALCULATE BMI
+*/
+
+
+#include<iostream>
+using namespace std;
+int main()
+{
+	float weight,height,BMI; //DECLARATION OF VARIABLES TO BE USED IN PROGRAM
+	
+	cout<<"ENTER YOUR WEIGHT IN KILOGRAMS: ";
+	cin>>weight;
+	
+	cout<<"ENTER YOUR HEIGHT IN METERS: ";
+	cin>>height;
+	
+	BMI = weight/(height*height);
+	
+	cout<<"YOUR BMI IS: "<<BMI;
+	
+	
+	
+	if(BMI<18.5)
+	{
+		cout<<"\nyou are Underweight";
+	}
+	
+	else if(BMI>=18.5 && BMI<=24.9)
+	{
+		cout<<"\nyou are Normal weight";
+	}
+	
+	else if(BMI>=25 && BMI<=29.9)
+	{
+		cout<<"\nyou are Overweight";
+	}
+	
+	else if(BMI>30)
+	{
+		cout<<"\nyou are Obersity";
+	}
+	
+	return 0;
+}
