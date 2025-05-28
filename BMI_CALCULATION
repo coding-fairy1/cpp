@@ -9,17 +9,17 @@
 using namespace std;
 int main()
 {
-	float weight,height,BMI; //DECLARATION OF VARIABLES TO BE USED IN PROGRAM
+	float weight,height,BMI; 
 	
-	cout<<"ENTER YOUR WEIGHT IN KILOGRAMS: ";
+	cout<<"Enter your weight in kilograms: ";
 	cin>>weight;
 	
-	cout<<"ENTER YOUR HEIGHT IN METERS: ";
+	cout<<"Enter your height in meters:";
 	cin>>height;
 	
 	BMI = weight/(height*height);
 	
-	cout<<"YOUR BMI IS: "<<BMI;
+	cout<<"Your BMI is: "<<BMI;
 	
 	
 	
@@ -40,7 +40,7 @@ int main()
 	
 	else if(BMI>30)
 	{
-		cout<<"\nyou are Obersity";
+		cout<<"\nyou are Obese";
 	}
 	
 	return 0;
