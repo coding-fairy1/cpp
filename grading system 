@@ -1,5 +1,10 @@
-#include <iostream>
+/*
+Name: Scovian Ann 
+Reg no:Bse-05-0189/2024
+Description:CPP CODE FOR ZETECH GRADING SYSTEM 
+*/
 
+#include<iostream>
 using namespace std;
 
 int main() {
