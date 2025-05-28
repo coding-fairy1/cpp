@@ -14,13 +14,13 @@ int main()
 	
 	cout<<"enter three numbers to check the largest"	<<endl;
 	
-	cout<<"\nENTER THE FIRST NUMBER: ";
+	cout<<"\nEnter the first number:";
 	cin>>num1;
 	
-	cout<<"\nENTER THE SECOND NUMBER: ";
+	cout<<"\nEnter the second number:";
 	cin>>num2;
 	
-	cout<<"\nENTER THE THIRD NUMBER: ";
+	cout<<"\nEnter the third number:";
 	cin>>num3;
 	
 	if(num1>num2 && num1>num3)
@@ -30,12 +30,12 @@ int main()
 	
 	else if(num2>num1 && num2>num3)
 	{
-		cout<<"\nThe number you entered secondly is greater\n";
+		cout<<"\nthe number you entered secondly is greater\n";
 	}
 	
 	else if(num3>num1 && num3>num2 )
 	{
-		cout<<"\nthe numbe you entered last is the greater\n";
+		cout<<"\nthe number you entered last is the greater\n";
 	}
 	return 0;
 }
