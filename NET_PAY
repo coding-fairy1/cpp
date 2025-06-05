@@ -1,0 +1,32 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    float hoursWorked, hourlyWage, grossPay, taxes, netPay;
+
+    cout << "Enter hours worked in a week: ";
+    cin >> hoursWorked;
+    cout << "Enter hourly wage: ";
+    cin >> hourlyWage;
+
+    if (hoursWorked > 40) {
+        grossPay = (40 * hourlyWage) + ((hoursWorked - 40) * hourlyWage * 1.5);
+    } else {
+        grossPay = hoursWorked * hourlyWage;
+    }
+
+    if (grossPay <= 600) {
+        taxes = grossPay * 15/100;
+    } else {
+        taxes = (600 * 15/100) + ((grossPay - 600) * 20/100);
+    }
+
+    netPay = grossPay - taxes;
+    
+    cout << "Gross pay: $" << grossPay << endl;
+    cout << "Taxes: $" << taxes << endl;
+    cout << "Net pay: $" << netPay << endl;
+
+    return 0;
+}
