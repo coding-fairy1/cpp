@@ -1,0 +1,23 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+  
+  double principal, time, rate, simpleInterest;
+
+  cout << "Enter the principal amount: ";
+  cin >> principal;
+
+  cout << "Enter the time period (in years): ";
+  cin >> time;
+
+  cout << "Enter the interest rate (as a percentage): ";
+  cin >> rate;
+
+  simpleInterest = (principal * time * rate) / 100;
+
+  cout << "The simple interest is: " << simpleInterest << endl;
+
+  return 0;
+}
