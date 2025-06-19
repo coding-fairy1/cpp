@@ -1,0 +1,58 @@
+/*
+Name:SCOVANN 
+Reg.no:BSE-05-0189/2024
+Description:CAR
+Date:19/06/2024
+VERSION 1
+*/
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Car {
+private:
+    string brand;
+    string model;
+    float price;
+    int mileage;
+
+public:
+    // Constructor to initialize the data members
+    Car(string b, string m, float p, int mi) {
+        brand = b;
+        model = m;
+        price = p;
+        mileage = mi;
+    }
+
+    // Function to display car details
+    void display() {
+        cout << "Brand: " << brand << endl;
+        cout << "Model: " << model << endl;
+        cout << "Price: $" << price << endl;
+        cout << "Mileage: " << mileage << " miles" << endl;
+    }
+
+    // Function to simulate driving the car and update mileage
+    void drive(int distance) {
+        mileage += distance;
+        cout << "Updated Mileage: " << mileage << " miles" << endl;
+    }
+};
+
+int main() {
+    // Create a Car object with the given details
+    Car myCar("Toyota", "Corolla", 20000, 5000);
+
+    // Display the car details
+    myCar.display();
+
+    // Simulate driving the car for 150 miles
+    myCar.drive(150);
+
+    // Simulate driving the car for another 300 miles
+    myCar.drive(300);
+
+    return 0;
+}
