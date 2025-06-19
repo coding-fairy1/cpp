@@ -1,0 +1,47 @@
+/*
+Name: SCOVIAN ANN 
+Reg no:BSE-05-0189/2024
+Description:ZU_EMPLOYEE
+Date:12/06/2025
+VERSION 1
+*/
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Employee {
+private:
+    int idno;
+    string name;
+    string occupation;
+
+public:
+    
+    void getDetails() {
+        cout << "Enter ID Number: ";
+        cin >> idno;
+        cin.ignore();
+
+        cout << "Enter Name: ";
+        getline(cin, name);
+
+        cout << "Enter Occupation: ";
+        getline(cin, occupation);
+    }
+    
+    void display() {
+        cout << "\nEmployee Details:" << endl;
+        cout << "ID Number: " << idno << endl;
+        cout << "Name: " << name << endl;
+        cout << "Occupation: " << occupation << endl;
+    }
+};
+
+int main() {
+    Employee emp;
+    emp.getDetails();
+    emp.display();
+
+    return 0;
+}
