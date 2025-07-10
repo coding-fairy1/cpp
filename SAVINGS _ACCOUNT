@@ -1,0 +1,79 @@
+/*
+Name:SCOVIAN ANN
+Reg.no:BSE-05-0189/2024
+Description:SAVINGS_ACCOUNT
+Date:06/07/2024
+*/
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+// Base class
+class AccountHolder {
+protected:
+    string name;
+
+public:
+    void setName(string n) {
+        name = n;
+    }
+
+    string getName() {
+        return name;
+    }
+};
+
+// Derived class from AccountHolder
+class BankAccount : public AccountHolder {
+private:
+    int accountNumber;
+    double balance;
+
+public:
+    // Constructor
+    BankAccount(string n, int accNum, double bal) {
+        setName(n); // Set name using base class method
+        accountNumber = accNum;
+        balance = bal;
+    }
+
+    int getAccountNumber() {
+        return accountNumber;
+    }
+
+    double getBalance() {
+        return balance;
+    }
+};
+
+// Another derived class from BankAccount
+class SavingsAccount : public BankAccount {
+private:
+    double interestRate;
+
+public:
+    // Constructor
+    SavingsAccount(string n, int accNum, double bal, double rate)
+        : BankAccount(n, accNum, bal) {
+        interestRate = rate;
+    }
+
+    double getInterestRate() {
+        return interestRate;
+    }
+};
+
+// Main function for testing
+int main() {
+    // Create a SavingsAccount object
+    SavingsAccount myAccount("Chloe ", 123456, 10000.0, 5.0);
+
+    // Display information
+    cout << "Account Holder: " << myAccount.getName() << endl;
+    cout << "Account Number: " << myAccount.getAccountNumber() << endl;
+    cout << "Balance: $" << myAccount.getBalance() << endl;
+    cout << "Interest Rate: " << myAccount.getInterestRate() << "%" << endl;
+
+    return 0;
+}
