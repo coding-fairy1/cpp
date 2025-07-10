@@ -1,0 +1,58 @@
+/*
+Name:SCOVANN 
+Reg no:BSE-05-0189/2024
+Description:AccountHolder inheritance 
+Date:26/06/2025
+*/
+
+#include <iostream>
+#include <string>
+
+class AccountHolder {
+protected:
+    std::string name;
+
+public:
+    // Constructor to initialize the account holder's name
+    AccountHolder(const std::string& accountHolderName) : name(accountHolderName) {}
+
+    // Method to get the account holder's name
+    std::string getName() const {
+        return name;
+    }
+
+    // Virtual function to display account details (to be overridden in derived classes)
+    virtual void displayAccountDetails() const {
+        std::cout << "Account Holder Name: " << name << std::endl;
+    }
+};
+
+
+// Derived class representing a Savings Account
+class SavingsAccount : public AccountHolder {
+private:
+    double balance;
+
+public:
+    SavingsAccount(const std::string& accountHolderName, double initialBalance) : AccountHolder(accountHolderName), balance(initialBalance) {}
+
+    void displayAccountDetails() const override {
+        AccountHolder::displayAccountDetails();
+        std::cout << "Account Balance: $" << balance << std::endl;
+    }
+};
+
+
+int main() {
+    // Create an AccountHolder object
+    AccountHolder* account1 = new AccountHolder("John Doe");
+    account1->displayAccountDetails();
+    delete account1;
+
+    // Create a SavingsAccount object
+    SavingsAccount* account2 = new SavingsAccount("Jane Smith", 1000.0);
+    account2->displayAccountDetails();
+    delete account2;
+
+    return 0;
+}
