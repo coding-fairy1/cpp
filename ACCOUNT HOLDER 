@@ -1,0 +1,44 @@
+/*
+Name:SCOVIAN ANN
+Reg.no:BSE-05-0189/2024
+Description:ACCOUNT_HOLDER
+Date:02/07/2024
+*/
+
+#include <iostream>
+#include <string>
+
+class AccountHolder {
+private:
+    std::string name;
+
+public:
+    // Constructor
+    AccountHolder(const std::string& accountHolderName = "") : name(accountHolderName) {}
+
+    // Setter method for the name
+    void setName(const std::string& n) {
+        name = n;
+    }
+
+    // Getter method for the name
+    std::string getName() const {
+        return name;
+    }
+
+    void displayAccountDetails() const {
+        std::cout << "Account Holder Name: " << name << std::endl;
+    }
+};
+
+int main() {
+    AccountHolder account1;
+    account1.setName("Alice");
+    std::cout << "Account holder 1 name: " << account1.getName() << std::endl;
+
+    AccountHolder account2("Bob"); // Using the constructor to set the name
+    std::cout << "Account holder 2 name: " << account2.getName() << std::endl;
+
+    return 0;
+}
+
