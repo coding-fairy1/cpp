@@ -1,0 +1,61 @@
+/*
+Name:SCOVIAN ANN
+Reg.no:BSE-05-0189/2024
+Description:BANK_ACCOUNT
+Date:05/07/2024
+*/
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+// Base class
+class AccountHolder {
+protected:
+    string name;
+
+public:
+    void setName(string n) {
+        name = n;
+    }
+
+    string getName() {
+        return name;
+    }
+};
+
+// Derived class
+class BankAccount : public AccountHolder {
+private:
+    int accountNumber;
+    double balance;
+
+public:
+    // Constructor
+    BankAccount(string n, int accNum, double bal) {
+        setName(n); // set name from base class
+        accountNumber = accNum;
+        balance = bal;
+    }
+
+    int getAccountNumber() {
+        return accountNumber;
+    }
+
+    double getBalance() {
+        return balance;
+    }
+};
+
+// Main function to test the classes
+int main() {
+    // Create a BankAccount object
+    BankAccount account("Alice", 1001, 2500.75);
+
+    // Display account details
+    cout << "Account Holder Name: " << account.getName() << endl;
+    cout << "Account Number: " << account.getAccountNumber() << endl;
+    cout << "Account Balance: $" << account.getBalance() << endl;
+
+    return 0;
+}
