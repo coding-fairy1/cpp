@@ -1,0 +1,77 @@
+/*
+Name:SCOVIAN ANN 
+Reg.no:BSE-05-0189/2024
+Description:LIBRARY_MANAGEMENT_SYSTEM 
+Date:23/07/2024
+*/
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+// Base class: Person
+class Person {
+protected:
+    string name;
+
+public:
+    void setName(string n) {
+        name = n;
+    }
+
+    string getName() const {
+        return name;
+    }
+};
+
+// Derived class: LibraryMember inherits from Person
+class LibraryMember : public Person {
+private:
+    int memberID;
+    int booksBorrowed;
+
+public:
+    // Constructor to initialize name, memberID, booksBorrowed
+    LibraryMember(string n, int id, int books) {
+        setName(n);              // Call base class function to set name
+        memberID = id;
+        booksBorrowed = books;
+    }
+
+    int getMemberID() const {
+        return memberID;
+    }
+
+    int getBooksBorrowed() const {
+        return booksBorrowed;
+    }
+};
+
+// Derived class: PremiumMember inherits from LibraryMember
+class PremiumMember : public LibraryMember {
+private:
+    double membershipFee;
+
+public:
+    // Constructor to initialize name, memberID, booksBorrowed, membershipFee
+    PremiumMember(string n, int id, int books, double fee)
+        : LibraryMember(n, id, books) {
+        membershipFee = fee;
+    }
+
+    double getMembershipFee() const {
+        return membershipFee;
+    }
+};
+
+// Sample main to demonstrate functionality (optional)
+int main() {
+    PremiumMember member("Scovian",89481,7,69.99);
+
+    cout << "Name: " << member.getName() << endl;
+    cout << "Member ID: " << member.getMemberID() << endl;
+    cout << "Books Borrowed: " << member.getBooksBorrowed() << endl;
+    cout << "Membership Fee: $" << member.getMembershipFee() << endl;
+
+    return 0;
+}
