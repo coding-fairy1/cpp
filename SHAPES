@@ -1,0 +1,87 @@
+/*
+Name:SCOVIAN ANN
+Reg.no:BSE-05-0189/2024
+Description:SHAPES
+Date:24/07/2025
+*/
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+// Base class
+class Shape {
+public:
+    virtual void area() {
+        cout << "Area calculation not defined for generic shape." << endl;
+    }
+
+    virtual ~Shape() {} // Virtual destructor
+};
+
+// Derived class: Rectangle
+class Rectangle : public Shape {
+private:
+    double length, width;
+
+public:
+    Rectangle(double l, double w) : length(l), width(w) {}
+
+    void area() override {
+        cout << "Rectangle Area: " << length * width << endl;
+    }
+};
+
+// Derived class: Circle
+class Circle : public Shape {
+private:
+    double radius;
+
+public:
+    Circle(double r) : radius(r) {}
+
+    void area() override {
+        cout << "Circle Area: " << M_PI * radius * radius << endl;
+    }
+};
+
+// Class to test polymorphism
+class PolymorphismTest {
+public:
+    void run() {
+        Shape* shape = nullptr;
+        int choice;
+        cout << "Choose a shape:\n1. Rectangle\n2. Circle\nChoice: ";
+        cin >> choice;
+
+        if (choice == 1) {
+            double l, w;
+            cout << "Enter length: ";
+            cin >> l;
+            cout << "Enter width: ";
+            cin >> w;
+            shape = new Rectangle(l, w);
+        } else if (choice == 2) {
+            double r;
+            cout << "Enter radius: ";
+            cin >> r;
+            shape = new Circle(r);
+        } else {
+            cout << "Invalid choice." << endl;
+            return;
+        }
+
+        // Demonstrate polymorphism
+        shape->area();
+
+        // Clean up
+        delete shape;
+    }
+};
+
+// Main function
+int main() {
+    PolymorphismTest test;
+    test.run();
+    return 0;
+}
